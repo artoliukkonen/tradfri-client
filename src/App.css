@@ -1,38 +1,145 @@
+@import '~antd/dist/antd.css';
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: .5rem;
+}
+
+.floor {
+  border-top: 1px solid #eee;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.lights {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.light__row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  flex: auto;
+  height: 10rem;
+  border: 1px solid gray;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.light:active {
+  background-color: lightgray;
+}
+
+.light__icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  z-index: 1;
+}
+.light__icon svg {
+  width: 45%;
+}
+
+.lights .light__icon {
+  border: 1px solid #a155ff;
+  background-color: white;
+}
+.lights .light__icon svg {
+  color: #a155ff;
+}
+
+.lights.lights__on .light__icon {
+  background-color:#a155ff;
+  border: transparent;
+}
+
+.lights.lights__on .light__icon svg {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.light__header {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.light__controls {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.light__controls .react-draggable {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  user-select: none; 
+  z-index: 2;
+}
+
+.lightbulbs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.light__slider {
+  width: 150px;
+  height: 1.5rem;
+  margin-top: 1.5rem;
+  position: absolute;
+}
+
+.light__circle {
+  position: absolute;
+}
+
+.lights__on .light__circle {
+  display: block;
+}
+
+circle {
+  fill: transparent;
+  stroke: violet;
+  stroke-width: 10;
+  stroke-dashoffset: 1000;
+}
+
+.ant-switch {
+  transform: scale(2);
+  margin-top: 2rem;
+}
+
+.ant-switch-checked {
+  background-color: #a155ff
+}
+
+.presets {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.presets .light__icon {
+  background-color: #a155ff;
+  margin: 1rem;
 }
