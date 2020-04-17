@@ -1,10 +1,15 @@
 # Trådfri Client
 
+This app is used to control Trådfri smart lights at our home, along with API running in Raspberry Pi. For configuration tutorial, backend examples and live preview see [this blog post I wrote](https://medium.com/@artoliukkonen/controlling-lights-with-ikea-tr%C3%A5dfri-raspberry-pi-and-aws-edb2827d8b3f). 
+
+Current configuration for plugs, bulbs, icons, floors and presets is the one we use at home. Feel free to adjust these to your needs.
+
 ## Configuration
 
 1. Copy `.env.example` as `.env` and replace API URL
 2. Change client bucket name in `serverless.yml`
 3. Edit `src/config.js` with your bulb & plug IDs
+4. Assing icons for devices in `src/components/Icon.js`
 
 You can get the ID's from API by calling `/list` endpoint.
 
